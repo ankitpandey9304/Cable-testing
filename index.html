@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cable Testing & Performance Comparison Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Home Screen -->
+    <div id="home" class="screen">
+        <h1>Cable Testing & Performance Comparison Simulator</h1>
+        <p>Compare UTP, Coaxial and Fiber Optic Cables</p>
+        <button onclick="showScreen('test')">Start Testing</button>
+    </div>
+
+    <!-- Testing Screen -->
+    <div id="test" class="screen">
+
+        <h2>Cable Testing</h2>
+
+        <label>Select Cable</label>
+        <br>
+
+        <select id="cable">
+            <option value="UTP">UTP Cable</option>
+            <option value="Coaxial">Coaxial Cable</option>
+            <option value="Fiber">Fiber Optic Cable</option>
+        </select>
+
+        <br>
+
+        <input type="number" id="length"
+               placeholder="Cable Length (meters)">
+
+        <br>
+
+        <input type="number" id="dataSize"
+               placeholder="Data Size (MB)">
+
+        <br>
+
+        <button onclick="runTest()">Test Cable</button>
+
+    </div>
+
+    <!-- Result Screen -->
+    <div id="resultScreen" class="screen">
+
+        <h2>Test Result</h2>
+
+        <div id="result"></div>
+
+        <button onclick="showScreen('comparison')">
+            Compare All Cables
+        </button>
+
+    </div>
+
+    <!-- Comparison Screen -->
+    <div id="comparison" class="screen">
+
+        <h2>Final Comparison Report</h2>
+
+        <table>
+            <tr>
+                <th>Cable</th>
+                <th>Bandwidth</th>
+                <th>Latency</th>
+                <th>Packet Loss</th>
+            </tr>
+
+            <tr>
+                <td>UTP</td>
+                <td>1 Gbps</td>
+                <td>10 ms</td>
+                <td>2%</td>
+            </tr>
+
+            <tr>
+                <td>Coaxial</td>
+                <td>10 Gbps</td>
+                <td>5 ms</td>
+                <td>1%</td>
+            </tr>
+
+            <tr>
+                <td>Fiber Optic</td>
+                <td>100 Gbps</td>
+                <td>1 ms</td>
+                <td>0.01%</td>
+            </tr>
+
+        </table>
+
+        <h3>Analysis</h3>
+
+        <p>Best Speed : Fiber Optic</p>
+        <p>Lowest Latency : Fiber Optic</p>
+        <p>Lowest Packet Loss : Fiber Optic</p>
+
+        <h2 class="winner">
+            🏆 Overall Winner : Fiber Optic
+        </h2>
+
+        <button onclick="location.reload()">
+            Test Again
+        </button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
