@@ -4,26 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cable Testing & Performance Comparison Simulator</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
 
-    <!-- Home Screen -->
+    <!-- HOME SCREEN -->
     <div id="home" class="screen">
+
+        <div class="home-icon">🌐</div>
+
         <h1>Cable Testing & Performance Comparison Simulator</h1>
-        <p>Compare UTP, Coaxial and Fiber Optic Cables</p>
-        <button onclick="showScreen('test')">Start Testing</button>
+
+        <p>
+            Analyze and compare UTP, Coaxial and Fiber Optic
+            cable performance.
+        </p>
+
+        <div class="feature-box">
+
+            <div class="feature">
+                ⚡ Speed Analysis
+            </div>
+
+            <div class="feature">
+                📡 Latency Testing
+            </div>
+
+            <div class="feature">
+                📉 Packet Loss
+            </div>
+
+            <div class="feature">
+                🏆 Best Cable Selection
+            </div>
+
+        </div>
+
+        <button onclick="showScreen('test')">
+            Start Simulation
+        </button>
+
     </div>
 
-    <!-- Testing Screen -->
+    <!-- TEST SCREEN -->
     <div id="test" class="screen">
 
-        <h2>Cable Testing</h2>
-
-        <label>Select Cable</label>
-        <br>
+        <h2>🔧 Cable Testing</h2>
 
         <select id="cable">
             <option value="UTP">UTP Cable</option>
@@ -31,26 +60,28 @@
             <option value="Fiber">Fiber Optic Cable</option>
         </select>
 
-        <br>
+        <input
+            type="number"
+            id="length"
+            placeholder="Cable Length (meters)"
+        >
 
-        <input type="number" id="length"
-               placeholder="Cable Length (meters)">
+        <input
+            type="number"
+            id="dataSize"
+            placeholder="Data Size (MB)"
+        >
 
-        <br>
-
-        <input type="number" id="dataSize"
-               placeholder="Data Size (MB)">
-
-        <br>
-
-        <button onclick="runTest()">Test Cable</button>
+        <button onclick="runTest()">
+            Run Test
+        </button>
 
     </div>
 
-    <!-- Result Screen -->
+    <!-- RESULT SCREEN -->
     <div id="resultScreen" class="screen">
 
-        <h2>Test Result</h2>
+        <h2>📊 Test Result</h2>
 
         <div id="result"></div>
 
@@ -60,12 +91,13 @@
 
     </div>
 
-    <!-- Comparison Screen -->
+    <!-- COMPARISON SCREEN -->
     <div id="comparison" class="screen">
 
-        <h2>Final Comparison Report</h2>
+        <h2>🏆 Final Comparison Dashboard</h2>
 
         <table>
+
             <tr>
                 <th>Cable</th>
                 <th>Bandwidth</th>
@@ -96,15 +128,21 @@
 
         </table>
 
-        <h3>Analysis</h3>
+        <div class="card">
 
-        <p>Best Speed : Fiber Optic</p>
-        <p>Lowest Latency : Fiber Optic</p>
-        <p>Lowest Packet Loss : Fiber Optic</p>
+            <p>⚡ Best Speed : Fiber Optic</p>
 
-        <h2 class="winner">
-            🏆 Overall Winner : Fiber Optic
-        </h2>
+            <p>📡 Lowest Latency : Fiber Optic</p>
+
+            <p>📉 Lowest Packet Loss : Fiber Optic</p>
+
+            <p>💰 Lowest Cost : UTP</p>
+
+        </div>
+
+        <div class="winner">
+            🏆 OVERALL WINNER : FIBER OPTIC
+        </div>
 
         <button onclick="location.reload()">
             Test Again
